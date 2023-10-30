@@ -8,6 +8,9 @@ import javax.persistence.Persistence;
 
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 
 public class AppLibros {
 
@@ -35,7 +38,7 @@ public class AppLibros {
 	
 	
 	
-	public static EntityManagerFactory createEntityManagerFactory() {
+	public static EntityManagerFactory createEntityManagerFactory() throws Exception {
 		// https://stackoverflow.com/questions/8836834/read-environment-variables-in-persistence-xml-file
 		Map<String, String> env = System.getenv();
 		Map<String, Object> configOverrides = new HashMap<String, Object>();
