@@ -73,7 +73,7 @@ public class AppLibros {
 			String key2 = key.replace("__",".");
 			if (env.containsKey(key)) {
 				String value = env.get(key);
-				configOverrides.put(key, value);
+				configOverrides.put(key2, value);
 			}
 		}
 		return Persistence.createEntityManagerFactory("db", configOverrides);
