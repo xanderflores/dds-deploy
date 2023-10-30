@@ -44,9 +44,13 @@ public class AppLibros {
 		Map<String, Object> configOverrides = new HashMap<String, Object>();
 
 		String[] keys = new String[] { 
-					      "hibernate__hbm2ddl__auto",
-				"hibernate__connection__pool_size", 
-					      "hibernate__show_sql" };
+			"javax__persistence__jdbc__driver",
+			"javax__persistence__jdbc__password",
+			"javax__persistence__jdbc__url",
+			"javax__persistence__jdbc__user",
+			"hibernate__hbm2ddl__auto",
+			"hibernate__connection__pool_size", 
+			"hibernate__show_sql" };
 
 		for (String key : keys) {
                
