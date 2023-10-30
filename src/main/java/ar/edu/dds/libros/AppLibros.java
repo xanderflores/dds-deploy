@@ -67,6 +67,8 @@ public class AppLibros {
 				configOverrides.put("javax.persistence.jdbc.url", value);
 				configOverrides.put("javax.persistence.jdbc.user", username);
 				configOverrides.put("javax.persistence.jdbc.password", password);
+				configOverrides.put("javax.persistence.jdbc.driver", "com.mysql.jdbc.Driver");
+				
 				//  configOverrides.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 			}
 			// no se pueden poner variables de entorno con "." en la key
@@ -75,6 +77,10 @@ public class AppLibros {
 				String value = env.get(key);
 				configOverrides.put(key2, value);
 			}
+		}
+		System.out.println("Config overrides ----------------------");
+		for (String key : configOverrides.keySet()) {
+			System.out.println(key + ": " + configOverrides.get(key));
 		}
 		return Persistence.createEntityManagerFactory("db", configOverrides);
 	}
