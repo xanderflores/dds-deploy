@@ -55,7 +55,7 @@ public class AppLibros {
 
 		for (String key : keys) {
                
-		
+		    try{
 			if (key.equals("DATABASE_URL")) {
                     
 				// https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-java
@@ -78,6 +78,9 @@ public class AppLibros {
 				String value = env.get(key);
 				configOverrides.put(key2, value);
 			}
+		    } catch(Exception ex){
+			System.out.println("Error configurando " + key);    
+		    }
 		}
 		System.out.println("Config overrides ----------------------");
 		for (String key : configOverrides.keySet()) {
