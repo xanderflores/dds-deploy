@@ -44,6 +44,7 @@ public class AppLibros {
 		Map<String, Object> configOverrides = new HashMap<String, Object>();
 
 		String[] keys = new String[] { 
+			"DATABASE_URL",
 			"javax__persistence__jdbc__driver",
 			"javax__persistence__jdbc__password",
 			"javax__persistence__jdbc__url",
