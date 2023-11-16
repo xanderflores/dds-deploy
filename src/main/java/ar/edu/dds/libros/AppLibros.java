@@ -24,8 +24,11 @@ public class AppLibros {
 		}
 		
 		entityManagerFactory =  createEntityManagerFactory();
-		
-		Integer port = Integer.parseInt(System.getProperty("PORT", "8080"));
+		String strport = System.getenv("PORT");
+		if (strport == null){
+			strport = "8080"
+		}
+		Integer port = Integer.parseInt(strport);
 
 		Javalin app = Javalin.create().start(port);
 		
